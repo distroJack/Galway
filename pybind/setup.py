@@ -3,4 +3,4 @@
 
 from distutils.core import setup, Extension
 
-setup(name="demo", version="1.0", ext_modules = [Extension("demo", ["demo_module.cpp"])]);
+setup(name="demo", version="1.0", ext_modules = [Extension("demo", ["src/demo_module.cpp"])]);
