@@ -16,4 +16,4 @@ Act as a **public** repo for cool problems and their equally fun solutions!
 
 ## Table of Contents
 - **combine-so:** how to repackage a static lib into another static lib with more source files
-- **pybind:** how to embed custom c++ code into python
+- **piebind:** how to embed custom c++ code into python
