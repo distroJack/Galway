@@ -22,12 +22,18 @@ PyObject* ReturnNumber(PyObject *self, PyObject *args)
 
 PyObject* ReturnTuple(PyObject *self, PyObject *args)
 {
-	std::cout << "Return Two Parameter" << std::endl;
+	std::cout << "Return Tuple" << std::endl;
 	return Py_BuildValue("(ii)", 1, 2);
 }
 
 PyObject* ReturnList(PyObject *self, PyObject *args)
 {
-	std::cout << "Return Two Parameter" << std::endl;
+	std::cout << "Return List" << std::endl;
 	return Py_BuildValue("[iii]", 1, 2, 3);
+}
+
+PyObject* ReturnString(PyObject *self, PyObject *args)
+{
+	std::cout << "Return String" << std::endl;
+	return Py_BuildValue("s", "Hello Buddy");
 }

@@ -10,6 +10,7 @@ static PyMethodDef demo_methods[] = {
   {"ReturnNumber", (PyCFunction)ReturnNumber, METH_NOARGS, "Return a number" },
   {"ReturnTuple", (PyCFunction)ReturnTuple, METH_NOARGS, "Return a tuple" },
   {"ReturnList", (PyCFunction)ReturnList, METH_NOARGS, "Return a list" },
+  {"ReturnString", (PyCFunction)ReturnString, METH_NOARGS, "Return a string" },
   {nullptr, nullptr, 0, nullptr}
 };
 

@@ -15,3 +15,6 @@ def test_return_tuple():
 
 def test_return_list():
 	assert(isinstance(demo.ReturnList(), list))
+
+def test_return_string():
+	assert(isinstance(demo.ReturnString(), str))

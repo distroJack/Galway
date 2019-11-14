@@ -10,3 +10,5 @@ PyObject* ReturnNumber(PyObject *self, PyObject *args);
 PyObject* ReturnTuple(PyObject *self, PyObject *args);
 
 PyObject* ReturnList(PyObject *self, PyObject *args);
+
+PyObject* ReturnString(PyObject *self, PyObject *args);
