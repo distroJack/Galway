@@ -11,4 +11,7 @@ def test_return_number():
 	demo.ReturnNumber()
 
 def test_return_tuple():
-	one, two = demo.ReturnTuple()
+	assert(isinstance(demo.ReturnTuple(), tuple))
+
+def test_return_list():
+	assert(isinstance(demo.ReturnList(), list))

@@ -23,7 +23,11 @@ PyObject* ReturnNumber(PyObject *self, PyObject *args)
 PyObject* ReturnTuple(PyObject *self, PyObject *args)
 {
 	std::cout << "Return Two Parameter" << std::endl;
-	auto a = Py_BuildValue("i", 1);
-	auto b = Py_BuildValue("i", 2);
-	return PyTuple_Pack(2, a, b);
+	return Py_BuildValue("(ii)", 1, 2);
+}
+
+PyObject* ReturnList(PyObject *self, PyObject *args)
+{
+	std::cout << "Return Two Parameter" << std::endl;
+	return Py_BuildValue("[iii]", 1, 2, 3);
 }
