@@ -1,0 +1,5 @@
+
+namespace Tester
+{
+  void test();
+}
