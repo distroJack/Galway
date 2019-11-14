@@ -2,22 +2,10 @@
 
 #include <Python.h>
 #include <iostream>
-
-static PyObject* HelloWorld(PyObject *self, PyObject *args)
-{
-	
-  std::cout << "Hello World" << std::endl;
-  Py_RETURN_NONE;
-}
-
-static PyObject *
-ReturnOne(PyObject *self, PyObject *args)
-{
-    return Py_BuildValue("i", 1);
-}
+#include "return_types.h"
 
 static PyMethodDef demo_methods[] = {
-  {"HelloWorld", (PyCFunction)HelloWorld, METH_NOARGS, "Demo hello world" },
+  {"ReturnNone", (PyCFunction)ReturnNone, METH_NOARGS, "Demo hello world" },
   {"ReturnOne", (PyCFunction)ReturnOne, METH_NOARGS, "different type" },
   {nullptr, nullptr, 0, nullptr}
 };
