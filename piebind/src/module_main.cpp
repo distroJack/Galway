@@ -5,8 +5,10 @@
 #include "return_types.h"
 
 static PyMethodDef demo_methods[] = {
-  {"ReturnNone", (PyCFunction)ReturnNone, METH_NOARGS, "Demo hello world" },
-  {"ReturnOne", (PyCFunction)ReturnOne, METH_NOARGS, "different type" },
+  {"ReturnNone", (PyCFunction)ReturnNone, METH_NOARGS, "Return no parameters" },
+  {"ReturnOne", (PyCFunction)ReturnOne, METH_NOARGS, "Return one parameter" },
+  {"ReturnTwo", (PyCFunction)ReturnTwo, METH_NOARGS, "Return two parameters" },
+  {"ReturnNumber", (PyCFunction)ReturnNumber, METH_NOARGS, "Return a number" },
   {nullptr, nullptr, 0, nullptr}
 };
 
