@@ -5,3 +5,7 @@ all: demo_module.cpp setup.py
 
 test: all
 	python3 demo_mod.py
+	
+clean:
+	rm -rf build
+	rm -rf *.cpython*
