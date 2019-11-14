@@ -6,6 +6,7 @@ import glob
 
 sources = [
 	"src/return_types.cpp",
+	"src/parameter_types.cpp",
 	"src/module_main.cpp"
 ]
 
