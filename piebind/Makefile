@@ -11,3 +11,4 @@ clean:
 	rm -rf build
 	rm -rf *.cpython*
 	rm -rf test/*.cpython*
+	rm -rf test/__pycache__
