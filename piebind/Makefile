@@ -5,8 +5,8 @@ all: src/*.cpp setup.py
 	cp *.cpython* ./test
 
 test: all
-	python3 -m pytest test
-	
+	python3 -m pytest test -v
+
 clean:
 	rm -rf build
 	rm -rf *.cpython*
