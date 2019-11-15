@@ -1,16 +1,14 @@
 # Project: Galway
----
 The (Problem, Solution) pairs I find neat
 
----
 ## Vision
----
 Act as a **public** repo for cool problems and their equally fun solutions!
 
 ## (Predicted) QA
----
 * **Q:** Whats up with the name?
 * *A:* Force of habit.
+
+---
 
 * **Q:** Why make this repo?
 * *A(1):* Showcase tricks/tools I've build in my private repos.
