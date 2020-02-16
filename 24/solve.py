@@ -1,6 +1,15 @@
 # #!/usr/bin/env python3
+import operator
 
 solution = 24
+
+operations = []
+operations += [operator.add]
+operations += [operator.sub]
+operations += [operator.mul]
+operations += [operator.floordiv]
+operations += [operator.mod]
+operations += [operator.pow]
 
 def find_solution(cards):
     """Print equation to get 24 using card values if possible."""
@@ -16,37 +25,6 @@ def find_solution(cards):
         print("Success")
     else:
         print("Failure")
-        
-
-def add(v1, v2):
-    """Return the sum of the two input values"""
-    return v1 + v2
-
-
-def subtract(v1, v2):
-    """Return the difference of the two input values"""
-    return v1 - v2
-
-
-def multiply(v1, v2):
-    """Return the product of the two input values"""
-    return v1 * v2
-
-
-def divide(v1, v2):
-    """Return the result of value one integer divided by value 2"""
-    return v1 // v2
-    
-
-def modulo(v1, v2):
-    """Return value one modulo value two"""
-    return v1 % v2
-
-def power(v1, v2):
-    """Return the first value raised to the power of the second value"""
-    return v1 ** v2
-
-operations = [add, subtract, multiply, divide, modulo, power]
 
 
 def solve_helper(target, cards):
@@ -64,7 +42,5 @@ def solve_helper(target, cards):
    
     return candidates
          
-    
 if __name__ == "__main__":
-
-    find_solution([1,2,3,4])
+    find_solution([1,1,2,10])
