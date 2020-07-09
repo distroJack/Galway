@@ -11,7 +11,7 @@ Act as a **public** repo for cool problems and their equally fun solutions!
 ---
 
 * **Q:** Why make this repo?
-* *A(1):* Showcase tricks/tools I've build in my private repos.
+* *A(1):* Showcase tricks/tools I've built in my private repos.
 * *A(2):* Excuse to exercise my brain
 
 ## Table of Contents
