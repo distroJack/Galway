@@ -3,9 +3,9 @@ from random import getrandbits, randint
 from typing import Tuple
 import itertools
 
-LENGTH = 3
+LENGTH = 4
 SIZE = LENGTH ** 2
-MODE = "random"
+MODE = "single"
 
 SQUARE_MAP = [(i//LENGTH, i%LENGTH) for i in range(SIZE)]
 
@@ -30,7 +30,7 @@ def get_square_from_board(board_state: int):
     square[0] %= LENGTH
     square[1] %= LENGTH
 
-    return square[0] % LENGTH, square[1] % LENGTH
+    return tuple(square)
 
 def get_potential_flips(key_square, current_square):
     col_diff = key_square[1] - current_square[1]
@@ -46,7 +46,10 @@ def get_potential_flips(key_square, current_square):
 
 def apply_coin_flip(board_state, flip):
     flip_square = flip[1] * LENGTH + flip[0]
-    print("Flipping square: {}".format(flip_square))
+    new_state = board_state ^ (1 << (SIZE - flip_square - 1))
+    return new_state
+
+def apply_coin_flip_ind(board_state, flip_square):
     new_state = board_state ^ (1 << (SIZE - flip_square - 1))
     return new_state
 
@@ -69,22 +72,58 @@ if __name__ == "__main__":
         current_board_square = get_square_from_board(board_state)
         print("Board square : {}".format(current_board_square))
 
-        flips = get_potential_flips(key_square, current_board_square)
-
-        for flip in flips:
-            flipped_board = apply_coin_flip(board_state, flip)
+        for flip in range(SIZE):
+            flipped_board = apply_coin_flip_ind(board_state, flip)
+            print("Flipped: {}".format(flip))
+            print_board(flipped_board)
             candidate_key_square = get_square_from_board(flipped_board)
+            print("New Square: {}".format(candidate_key_square))
             if candidate_key_square == key_square:
                 print("Solution found")
-                print(get_square_from_board(flipped_board))
                 break
 
-
-
     elif MODE == "single":
-        pass
+        board_str = "0000000000000001"
+        board_state = int(board_str, 2)
+        key_square = (1,1)
+        print("Key square : {}".format(key_square))
+        print_board(board_state)
+
+        current_board_square = get_square_from_board(board_state)
+        print("Stuff:{}".format(current_board_square))
+        print("Board square: {}".format(current_board_square))
+
+        for flip in range(SIZE):
+            flipped_board = apply_coin_flip_ind(board_state, flip)
+            print("Flipped: {}".format(flip))
+            print_board(flipped_board)
+            candidate_key_square = get_square_from_board(flipped_board)
+            print("New Square: {}".format(candidate_key_square))
+            if candidate_key_square == key_square:
+                print("Solution found")
+                break
     elif MODE == "all":
-        pass
+        for board_state in range(2 ** SIZE):
+            for key_ind in range(SIZE):
+                key_square = SQUARE_MAP[key_ind]
+                print("Solving board state {} @ ind {}".format(board_state, key_ind))
+                print(key_ind)
+                solved = False
+                for flip in range(SIZE):
+                    flipped_board = apply_coin_flip_ind(board_state, flip)
+                    candidate_key_square = get_square_from_board(flipped_board)
+                    print("Trying flip {}".format(flip))
+                    print_board(flipped_board)
+                    print("Yeilds: {}".format(candidate_key_square))
+                    if candidate_key_square[0] == key_square[0] and candidate_key_square[1] == key_square[1]:
+                        print("Solution found")
+                        solved = True
+                        break
+                if not solved:
+                    print("Can't solve set")
+                    print("Key square:{}".format(candidate_key_square))
+                    print_board(board_state)
+                    exit()
     else:
         print("ERROR: invalid MODE")
         exit()
