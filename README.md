@@ -15,8 +15,9 @@ Act as a **public** repo for cool problems and their equally fun solutions!
 * *A(2):* Excuse to exercise my brain
 
 ## Table of Contents
+- **24:** Oracle to tell if you can get to 24 given 4 "cards"
 - **coin-chess: arbitrary solver for problem described [here](https://www.youtube.com/watch?v=wTJI_WuZSwE&t=3s)
 - **combine-so:** how to repackage a static lib into another static lib with more source files
+- **docs:**
 - **piebind:** how to embed custom c++ code into python
 - **seabind:** example on how to use stand alone assembly in c
-- **24:** Oracle to tell if you can get to 24 given 4 "cards"

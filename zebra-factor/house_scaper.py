@@ -7,7 +7,8 @@ from os import path
 base_url = "https://house.fandom.com"
 root_url = base_url + "/wiki/House_Wiki"
 
-# fp = requests.get(root_url)
+print(root_url)
+fp = requests.get(root_url)
 
 def get_seasons(fd):
 
@@ -46,7 +47,10 @@ def get_episodes(fd, table_index):
             hrefs.append(elem["href"])
     return hrefs
 
-with open('main.html', 'r') as fd:
+if not path.isfile("./home.html"):
+    fp.save("./home.html")
+
+with open('home.html', 'r') as fd:
 
     season_links = get_seasons(fd)
     season_table_indexs = [1,1,2,0,0,0,0,0]
