@@ -14,7 +14,6 @@ double bad_solution(double b_units, bool debug_flag) {
         std::cout << "--- Serialize ---" << std::endl;
         std::cout << std::hex << (pre_a / 0x100) << std::endl;
         std::cout << std::hex << (pre_a & 0x00FF) << std::endl;
-        printf("Low : 0x%04x\n", buffer);
     }
 
     // ---- do some stuff ----
@@ -45,9 +44,9 @@ int main() {
     // B to A to B conversion test
 
     // Example shows +1 unit error
-    // double b_units = 210; // in B is 32,905 in A
+    double b_units = 210;
  
     // Example that doesn't show 1 unit error
-    double b_units = 21;
+    // double b_units = 20;
     double final_b_units = bad_solution(b_units, true);
 }

@@ -1,4 +1,4 @@
-// problem code that caused me a late night headache
+// solution to the problem
 
 #include "helpers.h"
 
@@ -24,8 +24,8 @@ double solution(double b_units, bool debug_flag) {
 
     if (debug_flag) {
         std::cout << "--- Deserialize ---" << std::endl;
-        std::cout << "High : " << std::hex << (uint16_t) ((0xFF & buffer[HIGH_BYTE_INDEX]) << 8) << std::endl;
-        std::cout << "Low : " << std::hex << (uint16_t) (0xFF & buffer[LOW_BYTE_INDEX]) << std::endl;
+        printf("High : 0x%02x\n", (0xFF & buffer[HIGH_BYTE_INDEX]));
+        printf("Low : 0x%02x\n", (0xFF & buffer[LOW_BYTE_INDEX]));
         uint16_t tmp_a = ((0xFF & buffer[HIGH_BYTE_INDEX]) << 8) | (0xFF & buffer[LOW_BYTE_INDEX]);
         std::cout << "Sum : " << std::hex << (uint16_t) tmp_a << " (BINGO NO OVERFLOW!)" << std::endl;
     }
@@ -45,7 +45,7 @@ int main() {
     // B to A to B conversion test
 
     // Example shows +1 unit error
-    double b_units = 210; // in B is 32,905 in A
+    double b_units = 210;
  
     // Example that doesn't show 1 unit error
     // double b_units = 20;
